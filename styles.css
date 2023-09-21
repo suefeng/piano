@@ -1,0 +1,352 @@
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Code";
+}
+body {
+  font-size: 1rem;
+}
+main {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+}
+button {
+  all: unset;
+  -webkit-tap-highlight-color: transparent;
+}
+.info {
+  padding: 2rem;
+  max-width: 40rem;
+  margin: auto;
+}
+
+/* settings */
+.settings {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  grid-gap: 0.3rem;
+  height: 100%;
+  color: #fff;
+  font-size: 0.8rem;
+  text-align: left;
+  white-space: nowrap;
+  background: #222;
+  padding: 0.3rem 0.5rem;
+}
+.main-settings {
+  display: grid;
+  grid-gap: 0.3rem;
+}
+#input-info {
+  font-size: 1rem;
+  line-height: 1.8;
+  width: 100%;
+  height: inherit;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background-color: #ddd;
+  color: #222;
+  padding: 0 4px;
+  min-width: 165px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+#input-info span:nth-of-type(1),
+#input-info span:nth-of-type(2) {
+  grid-column: 1;
+}
+#input-info span:nth-of-type(3) {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  height: inherit;
+  font-size: 2rem;
+}
+#input-info span.message {
+  text-align: center;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  align-items: center;
+}
+.toggle-complexity {
+  text-align: right;
+}
+[class^="toggle-"] label {
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+}
+[class^="toggle-"] input {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  margin: 0;
+  position: absolute;
+}
+[class^="toggle-"] input + label::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  display: inline-block;
+  border: 1px solid #fff;
+  top: 1px;
+  position: relative;
+  border-radius: 0.5rem;
+}
+[class^="toggle-"] input:checked + label::before {
+  background-color: aqua;
+}
+
+/* keyboard */
+#keyboard {
+  background: #222;
+  position: relative;
+  height: 280px;
+  display: grid;
+  grid-template-rows: 4.3rem 1fr;
+  width: 100%;
+}
+.keyboard-keys-wrapper {
+  width: 100%;
+  padding: 0 3px 1.5rem 1px;
+  overflow-x: auto;
+  scrollbar-color: aqua #222;
+  scrollbar-width: thin;
+  background: #222;
+  position: relative;
+  border-left: 0.5rem solid #222;
+  border-right: 0.5rem solid #222;
+}
+#keyboard-keys {
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+  width: 2000px;
+  height: 100%;
+  background: #fff;
+  text-align: center;
+  align-items: center;
+  position: relative;
+  border-radius: 0 0 5px 5px;
+  scroll-snap-type: x mandatory;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 3px;
+}
+#keyboard-keys::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: aqua;
+  display: block;
+  top: 0;
+  position: absolute;
+  z-index: 3;
+}
+.white-key {
+  background-color: #fff;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  height: 100%;
+  border: 1px solid #aaa;
+  position: relative;
+  padding: 0;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 3px 3px 0 #eee;
+  scroll-snap-align: center;
+}
+.black-key {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  width: 60%;
+  background-color: #000;
+  height: 60%;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 2px);
+  right: calc(-50% + 2px);
+  margin: auto;
+  font-size: 0.7rem;
+  border-radius: 0 0 4px 4px;
+  border-left: 0;
+  border-top: 0;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 3px 3px 0 #000;
+  z-index: 2;
+}
+.white-key,
+.black-key {
+  cursor: pointer;
+}
+
+/* selected keys */
+.white-key.selected .black-key {
+  left: calc(50% - 5px);
+  right: calc(-50% + 5px);
+}
+.selected {
+  background-color: aqua !important;
+}
+.white-key.selected {
+  box-shadow: none;
+  left: 3px;
+  right: -3px;
+}
+.black-key.selected {
+  border: 0;
+  box-shadow: none;
+  left: calc(50% + 1px);
+  right: calc(-50% - 1px);
+}
+
+/* rainbow keys */
+.rainbow .white-key[data-octave="1"] {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.rainbow .white-key[data-octave="2"] {
+  background-color: rgba(255, 166, 0, 0.2);
+}
+.rainbow .white-key[data-octave="3"] {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+.rainbow .white-key[data-octave="4"] {
+  background-color: rgba(0, 128, 0, 0.2);
+}
+.rainbow .white-key[data-octave="5"] {
+  background-color: rgba(0, 0, 255, 0.2);
+}
+.rainbow .white-key[data-octave="6"] {
+  background-color: rgba(76, 0, 130, 0.2);
+}
+.rainbow .white-key[data-octave="7"] {
+  background-color: rgba(238, 130, 238, 0.2);
+}
+
+/* keyboard shortcuts */
+.white-key::after,
+.black-key::after {
+  content: attr(data-key);
+}
+[data-key="Enter"]::after {
+  content: "↵";
+}
+[data-key="ArrowLeft"]::after {
+  content: "⇐";
+}
+[data-key="ArrowDown"]::after {
+  content: "⇓";
+}
+[data-key="ArrowRight"]::after {
+  content: "⇒";
+}
+.key,
+button:not([data-key=""])::after {
+  font-size: 0.7rem;
+  display: inline-block;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 0 0.2rem;
+  background-color: #fff;
+}
+button:not([data-key=""])::after {
+  margin: 0.5rem auto;
+  left: 0;
+  right: 0;
+  width: 1rem;
+  position: absolute;
+  box-sizing: border-box;
+}
+.white-key:not([data-key=""])::after {
+  bottom: 20%;
+}
+.black-key:not([data-key=""])::after {
+  color: #222;
+  bottom: 0;
+}
+
+/* notate where certain notes are */
+button[data-note="C"]::before {
+  content: "C" attr(data-octave);
+}
+button[data-note="A"][data-octave="0"]::before {
+  content: "A0";
+}
+button[data-note="C"]::before,
+button[data-note="A"][data-octave="0"]::before {
+  margin: 0.5rem auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+}
+
+/* minimal version only */
+.minimal-version {
+  touch-action: pan-x pan-y;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.minimal-version #keyboard {
+  height: 100%;
+}
+.minimal-version #keyboard-keys {
+  width: 4000px;
+}
+.minimal-version h1,
+.touch-version button::after,
+.hide-shortcuts button::after,
+.minimal-version .info,
+.touch-version .toggle-shortcuts {
+  display: none !important;
+}
+
+@media screen and (max-width: 400px) {
+  .settings {
+    padding: 0.3rem;
+    grid-gap: 0.3rem;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .main-settings {
+    grid-column: 1;
+  }
+  button::after,
+  .toggle-shortcuts {
+    display: none;
+  }
+  .toggle-complexity {
+    grid-column: 1;
+    text-align: left;
+  }
+  #input-info {
+    grid-column: 2;
+    grid-row: span 2;
+    height: inherit;
+    width: inherit;
+  }
+}

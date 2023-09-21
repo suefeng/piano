@@ -10,7 +10,11 @@ Run `npx http-server` in your terminal to get this app started, or simply open i
 
 ### Keyboard shortcuts
 
-This is an 88 key piano, but not all the keys have keyboard shortcuts. There's keyboard shortcuts mapping for Octaves 2 to 5, where the middle octave is on the home row. I dedicated the right-most keys to the black keys, and the left 7 keys to the white keys, and each octave on its own row, so it's easy to remember. I wanted each key to have its own key mapping so that you can play multiple notes at once fine for chords. The shortcuts are on the keys by default for desktop but not for mobile (since you don't need them), and they are togglable on desktop.
+This is an 88 key piano, but not all the keys have keyboard shortcuts. There's keyboard shortcuts mapping for Octaves 2 to 5, where the middle octave is on the home row. I dedicated the right-most keys to the black keys, and the left 7 keys to the white keys, and each octave on its own row, so it's easy to remember. I wanted each key to have its own key mapping so that you can play multiple notes at once fine for chords, and even a simple song with both hands. The shortcuts are on the keys by default for desktop but not for mobile (since you don't need them), and they are togglable on desktop. You can play chromatic scales with `tab` and `shift` + `tab` and holding it down sustains all the keys.
+
+### Mouse clicks and touchscreen tapping
+
+Clicking / tapping on the keys with your mouse / finger to play the notes also works for playing, and holding down sustains the notes. You can play chords as well with touchscreen. I'm not sure how to make it possible for mouse-clicking to play chords.
 
 ### Fullscreen distraction-free mode
 

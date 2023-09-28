@@ -17,6 +17,7 @@
       rel="stylesheet"
     />
     <link href="styles.css" rel="stylesheet" />
+    <link href="score.css" rel="stylesheet" />
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
@@ -77,6 +78,16 @@
       </div>
       <div class="info">
         <h1>Piano Keyboard</h1>
+        <textarea id="recordedNotesTextarea"></textarea>
+        <button
+          type="button"
+          text="convert to notes"
+          onclick="convertToNotes();"
+          class="button"
+        >
+          convert to notes
+        </button>
+        <div id="musicOutput" width="100%"></div>
         <h2>Info and tips</h2>
         <p>
           This piano keyboard is created with A4 as 440Hz, with
@@ -101,6 +112,9 @@
         </p>
       </div>
     </main>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.2/build/cjs/vexflow.js"></script>
+    <script src="js/notes.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

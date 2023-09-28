@@ -1,0 +1,20 @@
+textarea {
+  width: 0;
+  height: 0;
+  border: 0;
+  resize: none;
+  visibility: hidden;
+  position: absolute;
+}
+.button {
+  cursor: pointer;
+  background-color: aqua;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+#musicOutput {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}

@@ -18,3 +18,7 @@ textarea {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
 }
+#musicOutput svg {
+  width: 100%;
+  height: auto;
+}

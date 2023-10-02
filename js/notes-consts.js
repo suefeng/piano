@@ -1,5 +1,5 @@
-var NOTES = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "G♯", "A", "B♭", "B"];
-var NOTES_MAP = [
+const NOTES = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "G♯", "A", "B♭", "B"];
+const NOTES_MAP = [
   { note: "A", octave: "0", key: "" },
   { note: "B♭", octave: "0", key: "" },
   { note: "B", octave: "0", key: "" },
@@ -88,4 +88,11 @@ var NOTES_MAP = [
   { note: "B♭", octave: "7", key: "" },
   { note: "B", octave: "7", key: "" },
   { note: "C", octave: "8", key: "" },
+];
+const DURATION_VALUES = [
+  { name: "w", measure: 1 },
+  { name: "h", measure: 1 / 2 },
+  { name: "q", measure: 1 / 4 },
+  { name: "8", measure: 1 / 8 },
+  { name: "16", measure: 1 / 16 },
 ];

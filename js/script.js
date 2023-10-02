@@ -19,6 +19,8 @@ var isTouchDevice =
   (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 0) ||
   deviceAgent.match(/blackberry/i) ||
   deviceAgent.match(/bada/i);
+var pressed = {};
+var beatsPerMin = 60; // may make a menu of metronome values later;
 
 // default to minimal version if on touch device
 if (isTouchDevice) {
@@ -37,4 +39,16 @@ KEY_ELEMENTS.forEach((el) => {
     el.addEventListener("mousedown", (e) => playNote(e));
   }
 });
-window.addEventListener("keydown", (e) => playNote(e));
+
+{
+  var fired = false;
+  window.addEventListener("keydown", (e) => {
+    if (!fired) {
+      fired = true;
+      playNote(e);
+    }
+    window.addEventListener("keyup", (e) => {
+      fired = false;
+    });
+  });
+}

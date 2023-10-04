@@ -1,4 +1,6 @@
-/* toggles */
+/* 
+These functions are for toggling checkboxes on the keyboard
+*/
 
 function toggleComplexity() {
   document.body.classList.toggle("minimal-version");

@@ -1,15 +1,15 @@
 createKeyboard();
 
-var KEY_ELEMENTS = document.querySelectorAll('button[id^="key"]');
-var keyboard = document.getElementById("keyboard");
-var complexityElement = document.getElementById("toggle-complexity");
-var label = document.querySelector('[for="toggle-complexity"]');
-var focusKey = document.getElementById("key39"); // middle C
-var inputInfo = document.getElementById("input-info");
-var audioContext = new (window.AudioContext || window.webkitAudioContext)();
-var deviceAgent = navigator.userAgent.toLowerCase();
-var recordedNotesTextarea = document.getElementById("recordedNotesTextarea");
-var isTouchDevice =
+const KEY_ELEMENTS = document.querySelectorAll('button[id^="key"]');
+const keyboard = document.getElementById("keyboard");
+const complexityElement = document.getElementById("toggle-complexity");
+const label = document.querySelector('[for="toggle-complexity"]');
+const focusKey = document.getElementById("key39"); // middle C
+const inputInfo = document.getElementById("input-info");
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const deviceAgent = navigator.userAgent.toLowerCase();
+const recordedNotesTextarea = document.getElementById("recordedNotesTextarea");
+const isTouchDevice =
   deviceAgent.match(/(iphone|ipod|ipad)/) ||
   deviceAgent.match(/(android)/) ||
   deviceAgent.match(/(iemobile)/) ||
@@ -19,8 +19,8 @@ var isTouchDevice =
   (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 0) ||
   deviceAgent.match(/blackberry/i) ||
   deviceAgent.match(/bada/i);
-var pressed = {};
-var beatsPerMin = 60; // may make a menu of metronome values later;
+let pressed = {};
+const beatsPerMin = 60; // may make a menu of metronome values later;
 
 // default to minimal version if on touch device
 if (isTouchDevice) {
@@ -41,7 +41,7 @@ KEY_ELEMENTS.forEach((el) => {
 });
 
 {
-  var fired = false;
+  let fired = false;
   window.addEventListener("keydown", (e) => {
     if (!fired) {
       fired = true;

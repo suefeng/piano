@@ -1,4 +1,8 @@
-/* Functions */
+/* 
+These functions help create the keyboard
+Map notes to frequencies
+Create the sound and stop the sound 
+*/
 function createKeyboard() {
   const keyboardKeys = document.getElementById("keyboard-keys");
 
@@ -116,17 +120,17 @@ function playNote(e) {
 }
 
 function stopSound(keyElement, gainNode, oscillator, e) {
-  const note = keyElement
-    .getAttribute("data-note")
-    .replace(/♯/, "#")
-    .replace(/♭/, "b");
-  const octave = keyElement.getAttribute("data-octave");
-  const duration = calculateDuration(e);
-  const stemDirection = Number(octave) > 4 ? -1 : 1;
+  // const note = keyElement
+  //   .getAttribute("data-note")
+  //   .replace(/♯/, "#")
+  //   .replace(/♭/, "b");
+  // const octave = keyElement.getAttribute("data-octave");
+  // const duration = calculateDuration(e);
+  // const stemDirection = Number(octave) > 4 ? -1 : 1;
 
-  writeToTextarea(
-    `{"keys": ["${note}/${octave}"], "duration": "${duration}", "stem_direction": ${stemDirection}}`
-  );
+  // writeToTextarea(
+  //   `{"keys": ["${note}/${octave}"], "duration": "${duration}", "stem_direction": ${stemDirection}}`
+  // );
 
   gainNode.gain.cancelScheduledValues(0);
   gainNode.gain.setValueAtTime(gainNode.gain.value, 0.02);

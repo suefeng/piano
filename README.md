@@ -45,7 +45,17 @@ From Mozilla's article on GainNode:
 
 I learned that using the `sine` waves sounds the nicest to me, but it was hard to hear the lower frequencies, and `triangle` sounds the next best to me, and can hear all the frequencies, so I went with that. I also learned that the higher notes are ear-piercing, but adjusting the `gain` accordingly helps, so I set lower and lower gains as the frequency increases.
 
+### Future Development
+
 In the future I'd like to play with the `PerodicWave` to create my own wave form to sound more like a piano. I learned that in some cases, changing the `PerodicWave` changes the pitch, so it became in-accurate, though it sounded nicer. I also found a site called Audiosynth that someone made their own audio synthesizers for different instruments. It worked great for making the sound like a piano, but it wasn't a sustained note, and didn't work on mobile when I tried implementing. I'll have to research it more.
+
+I'd like to write tests for the application, and also improve the code composition, and fix bugs. There's always ways to write more efficently and/or clearly.
+
+I'd like to create a sheet music generator where you play the song on the keyboard, and it auto-generates the sheet music for composing something new. It may need some configurations from the user such as treble or bass clef, key signature, speed, etc. It would be great if it's editable as well, and can be printed or saved as a PDF.
+
+I'd like to make it recordable, so you can record what you play and play it back, and save the recording if you like it.
+
+Perhaps the new features such as sheet music generator and recording can be separate, and the piano can be created as a package, and used in a bigger music app that can use multiple instruments to generate music.
 
 ### Fullscreen-related
 

@@ -45,7 +45,15 @@ From Mozilla's article on GainNode:
 
 I learned that using the `sine` waves sounds the nicest to me, but it was hard to hear the lower frequencies, and `triangle` sounds the next best to me, and can hear all the frequencies, so I went with that. I also learned that the higher notes are ear-piercing, but adjusting the `gain` accordingly helps, so I set lower and lower gains as the frequency increases.
 
-### Future Development
+### Fullscreen-related
+
+I wasn't able to get fullscreen mode to toggle on mobile, but I found a way to get it to work with homescreen button using a combination of `manifest.json` setting `<meta name="apple-mobile-web-app-capable" content="yes" />` and `<meta name="mobile-web-app-capable" content="yes" />` since I only have iOS to test on so far, and used all three for good measure. Somehow only using `manifest.json` didn't work for me in iOS.
+
+## Testing
+
+I haven't created automated tests for this project yet, but I manually tested it with Firefox, Chrome, and Safari on MacOS Desktop, and it works fine in them. I also tested in Firefox, Safari, Chrome, and Edge in iOS mobile. It works fine in Firefox, and Safari, but for Chrome and Edge, there is a slight lag so each note can be played with a pause in between, but that's not ideal. Hopefully I'll figure out a way to get it working fine across interfaces.
+
+## Future Development
 
 In the future I'd like to play with the `PerodicWave` to create my own wave form to sound more like a piano. I learned that in some cases, changing the `PerodicWave` changes the pitch, so it became in-accurate, though it sounded nicer. I also found a site called Audiosynth that someone made their own audio synthesizers for different instruments. It worked great for making the sound like a piano, but it wasn't a sustained note, and didn't work on mobile when I tried implementing. I'll have to research it more.
 
@@ -56,14 +64,6 @@ I'd like to create a sheet music generator where you play the song on the keyboa
 I'd like to make it recordable, so you can record what you play and play it back, and save the recording if you like it.
 
 Perhaps the new features such as sheet music generator and recording can be separate, and the piano can be created as a package, and used in a bigger music app that can use multiple instruments to generate music.
-
-### Fullscreen-related
-
-I wasn't able to get fullscreen mode to toggle on mobile, but I found a way to get it to work with homescreen button using a combination of `manifest.json` setting `<meta name="apple-mobile-web-app-capable" content="yes" />` and `<meta name="mobile-web-app-capable" content="yes" />` since I only have iOS to test on so far, and used all three for good measure. Somehow only using `manifest.json` didn't work for me in iOS.
-
-## Testing
-
-I haven't created automated tests for this project yet, but I manually tested it with Firefox, Chrome, and Safari on MacOS Desktop, and it works fine in them. I also tested in Firefox, Safari, Chrome, and Edge in iOS mobile. It works fine in Firefox, and Safari, but for Chrome and Edge, there is a slight lag so each note can be played with a pause in between, but that's not ideal. Hopefully I'll figure out a way to get it working fine across interfaces.
 
 ## Sources I used during research
 

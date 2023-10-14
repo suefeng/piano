@@ -24,9 +24,6 @@ button {
 }
 #unmuteAudio {
   visibility: hidden;
-  position: absolute;
-  width: 0;
-  height: 0;
 }
 .info {
   padding: 2rem;

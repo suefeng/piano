@@ -79,3 +79,6 @@ This isn't all the sources I used, but I tried putting together what I could rem
 - [Audiosynth](https://keithwhor.github.io/audiosynth/) for making it sound like a piano
 - [AudioParam](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam)
 - [Making Fullscreen Experiences](https://web.dev/fullscreen/)
+- [StackOverflow: ios webaudio only works on headphones](https://stackoverflow.com/questions/21122418/ios-webaudio-only-works-on-headphones/46839941#46839941)
+- [unmute-ios-audio](https://github.com/feross/unmute-ios-audio/tree/master)
+

@@ -38,10 +38,7 @@ It all started when I was curious on how to make sounds using JavaScript, how to
 
 I learned that you only need one `AudioContext` for all the `oscillators` and `gains`. Creating new ones each time makes the audio quality degrade over time, and is a lot less efficient. That helped with the sound creation being more consistent.
 
-It was hard to debug issues at times, but people online encountered similar issues. Another issue was hearing a clicking noise after each oscillator stops. I learned that using a `exponentialRampToValueAtTime` or `linearRampToValueAtTime` to gradually turn down the volume and then stop the oscillator helps, but isn't perfect. I ended up going with `linearRampToValueAtTime` since it's more gradual. This is still a learning process, so I'll probably tweak it as I learn more. For instance I want to try using `AudioParam` instead to see how that goes, instead of changing the `gain` before stopping the `oscillator`.
-
-From Mozilla's article on GainNode:
-> "The gain is a unitless value, changing with time, that is multiplied to each corresponding sample of all input channels. If modified, the new gain is instantly applied, causing unaesthetic 'clicks' in the resulting audio. To prevent this from happening, never change the value directly but use the exponential interpolation methods on the AudioParam interface."
+It was hard to debug issues at times, but people online encountered similar issues. Another issue was hearing a clicking noise after each oscillator stops. I learned that using a `exponentialRampToValueAtTime` or `linearRampToValueAtTime` to gradually turn down the volume and then stop the oscillator helps, but isn't perfect. I ended up going with `linearRampToValueAtTime` since it's more gradual. This is still a learning process, so I'll probably tweak it as I learn more. 
 
 I learned that using the `sine` waves sounds the nicest to me, but it was hard to hear the lower frequencies, and `triangle` sounds the next best to me, and can hear all the frequencies, so I went with that. I also learned that the higher notes are ear-piercing, but adjusting the `gain` accordingly helps, so I set lower and lower gains as the frequency increases.
 

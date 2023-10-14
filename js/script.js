@@ -9,6 +9,7 @@ const inputInfo = document.getElementById("input-info");
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const deviceAgent = navigator.userAgent.toLowerCase();
 const recordedNotesTextarea = document.getElementById("recordedNotesTextarea");
+const unmuteAudio = document.getElementById("unmuteAudio");
 const isTouchDevice =
   deviceAgent.match(/(iphone|ipod|ipad)/) ||
   deviceAgent.match(/(android)/) ||
@@ -21,6 +22,7 @@ const isTouchDevice =
   deviceAgent.match(/bada/i);
 let pressed = {};
 const beatsPerMin = 60; // may make a menu of metronome values later;
+let touchCount = 0;
 
 // default to minimal version if on touch device
 if (isTouchDevice) {

@@ -96,9 +96,24 @@ function makeSound(keyElement, frequency, volume) {
   }
 }
 
+function unmuteForMobile() {
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    hack for ensuring oscillators will work even when
+    headphones are plugged in for mobile device
+    only play audio file once if it's a touch device
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  if (isTouchDevice) {
+    touchCount++;
+  }
+  if (touchCount === 1) {
+    unmuteAudio.play();
+  }
+}
+
 function playNote(e) {
   const keyElement = getKeyElement(e);
   pressed[e.which] = e.timeStamp; // create a starting timestamp
+  unmuteForMobile();
 
   if (keyElement) {
     const frequency = Number(keyElement.getAttribute("data-frequency"));

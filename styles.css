@@ -22,6 +22,12 @@ button {
   all: unset;
   -webkit-tap-highlight-color: transparent;
 }
+#unmuteAudio {
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
 .info {
   padding: 2rem;
   max-width: 40rem;

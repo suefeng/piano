@@ -1,9 +1,7 @@
 /*
 These functions help generate sheet music 
 They are used with vexflow and are a
-work in progress. This file temporarily
-not being used since vexflow is a 3rd
-party library.
+work in progress.
 */
 function writeToTextarea(text) {
   recordedNotesTextarea.value += `${text}, `;

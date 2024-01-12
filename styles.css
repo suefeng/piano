@@ -261,7 +261,7 @@ button {
 [data-key="ArrowRight"]::after {
   content: "⇒";
 }
-.key,
+kbd,
 button:not([data-key=""])::after {
   font-size: 0.7rem;
   display: inline-block;

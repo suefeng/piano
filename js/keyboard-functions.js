@@ -93,6 +93,15 @@ function makeSound(keyElement, frequency, volume) {
         }
       });
     }
+    {
+      let fired = false;
+      keyElement.addEventListener("focusout", (e) => {
+        if (!fired) {
+          fired = true;
+          stopSound(keyElement, gainNode, oscillator, e);
+        }
+      });
+    }
   }
 }
 
@@ -122,14 +131,14 @@ function playNote(e) {
       frequency < 130
         ? 2
         : frequency < 261
-        ? 1
-        : frequency < 500
-        ? 0.4
-        : frequency < 1000
-        ? 0.2
-        : frequency < 2000
-        ? 0.07
-        : 0.04;
+          ? 1
+          : frequency < 500
+            ? 0.4
+            : frequency < 1000
+              ? 0.2
+              : frequency < 2000
+                ? 0.07
+                : 0.04;
     makeSound(keyElement, frequency, volume);
   }
 }

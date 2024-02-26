@@ -39,6 +39,7 @@ KEY_ELEMENTS.forEach((el) => {
     el.addEventListener("touchstart", (e) => playNote(e));
   } else {
     el.addEventListener("mousedown", (e) => playNote(e));
+    el.addEventListener("focusin", (e) => playNote(e));
   }
 });
 
